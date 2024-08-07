@@ -11,7 +11,7 @@
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
 	const binary_tree_t *clonetree = tree;
-	
+
 	int depth = 0;
 
 	if (clonetree == NULL || tree == NULL)
