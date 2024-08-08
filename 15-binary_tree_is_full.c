@@ -12,7 +12,7 @@
 size_t binary_tree_height(const binary_tree_t *tree);
 
 /**
- * binary_tree_balance - main
+ * binary_tree_is_full - main
  * @tree: clone  of main tree
  * Return: balance of tree
  *
@@ -20,18 +20,18 @@ size_t binary_tree_height(const binary_tree_t *tree);
 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-        int rightcount = 0, leftcount = 0;
+	int rightcount = 0, leftcount = 0;
 
-        if (tree == NULL)
-        {
-                return (0);
-        }
+	if (tree == NULL)
+	{
+		return (0);
+	}
 
 
-        leftcount += binary_tree_height(tree->left);
-        rightcount += binary_tree_height(tree->right);
-        
-	if(leftcount == rightcount)
+	leftcount += binary_tree_height(tree->left);
+	rightcount += binary_tree_height(tree->right);
+
+	if (leftcount == rightcount)
 		return (1);
 	else
 		return (0);
@@ -45,22 +45,22 @@ int binary_tree_is_full(const binary_tree_t *tree)
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-        int lc = 0, rc = 0;
+	int lc = 0, rc = 0;
 
-        if (tree == NULL)
-        {
-                return (0);
-        }
-        lc += binary_tree_height(tree->left);
-        rc += binary_tree_height(tree->right);
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	lc += binary_tree_height(tree->left);
+	rc += binary_tree_height(tree->right);
 
-        if (lc == rc)
-        {
-                return (1);
-        }
+	if (lc == rc)
+	{
+		return (1);
+	}
 
-        else
-        {
-                return (0);
-        }
+	else
+	{
+		return (0);
+	}
 }
