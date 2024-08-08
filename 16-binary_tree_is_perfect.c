@@ -1,70 +1,58 @@
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
 #include "binary_trees.h"
-
-
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * binary_tree_height - main
- * @tree: divided tree
- * Return: tree
- */
-size_t binary_tree_height(const binary_tree_t *tree);
-
-/**
- * binary_tree_is_perfect - main
- * @tree: clone  of main tree
- * Return: balance of tree
+ * tree_is_perfect - Function that says if a tree is perfect or not.
+ * @tree: Tree to be checked
  *
+ * Return: 1 if tree is perfect,
+ *	0 if not.
  */
-
-int binary_tree_is_perfect(const binary_tree_t *tree)
+int tree_is_perfect(const binary_tree_t *tree)
 {
-	int rightcount = 0, leftcount = 0, moment = 0;
+	int l = 0, r = 0;
 
-	if (tree == NULL)
+	if (tree->left && tree->right)
 	{
+		l = 1 + tree_is_perfect(tree->left);
+		r = 1 + tree_is_perfect(tree->right);
+		if (r == l && r != 0 && l != 0)
+			return (r);
 		return (0);
 	}
-
-	if (tree->right == NULL && tree->left == NULL)
+	else if (!tree->left && !tree->right)
 	{
 		return (1);
 	}
-
-	leftcount += binary_tree_height(tree->left);
-	rightcount += binary_tree_height(tree->right);
-	moment = leftcount - rightcount;
-	if (moment == 0)
-		return (1);
 	else
+	{
 		return (0);
+	}
 }
 
 /**
- * binary_tree_height - main
- * @tree: divided tree
- * Return: tree
+ * binary_tree_is_perfect - Checks binary tree if it is perfect
+ * @tree: Binary tree to check
+ *
+ * Return: 1 if tree is perfect,
+ *	0 if not.
  */
-
-size_t binary_tree_height(const binary_tree_t *tree)
+int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int lc = 0, rc = 0;
+	int result = 0;
 
 	if (tree == NULL)
 	{
 		return (0);
 	}
-	lc += binary_tree_height(tree->left);
-	rc += binary_tree_height(tree->right);
-
-	if (lc > rc)
-	{
-		return (lc + 1);
-	}
-
 	else
 	{
-		return (rc + 1);
+		result = tree_is_perfect(tree);
+		if (result != 0)
+		{
+			return (1);
+		}
+		return (0);
 	}
 }
