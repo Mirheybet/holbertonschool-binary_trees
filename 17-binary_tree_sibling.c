@@ -17,7 +17,7 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 		return (NULL);
 	}
 
-	*clone = node->parent;
+	clone = node->parent;
 
 	if (clone->right == node)
 	{
