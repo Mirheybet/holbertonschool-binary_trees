@@ -9,7 +9,7 @@ a function that inserts a node as the left-child of another node
 ===============================================================
 Task 2:
 a function that inserts a node as the right-child of another node
-===================================================================
+=================================================================
 Task 3:
 a function that deletes an entire binary tree
 ===============================================================
