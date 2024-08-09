@@ -48,7 +48,7 @@ a function that measures the balance factor of a binary tree
 =============================================================
 Task 15:
 a function that checks if a binary tree is full
-==================================================================
+===============================================================
 Task 16:
 a function that checks if a binary tree is perfect
 ==========================================================
