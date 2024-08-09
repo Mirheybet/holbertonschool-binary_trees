@@ -42,7 +42,7 @@ a function that counts the leaves in a binary tree
 ============================================================
 Task 13:
  a function that counts the nodes with at least 1 child in a binary tree
-=========================================================
+=============================================================
 Task 14:
 a function that measures the balance factor of a binary tree
 =============================================================
